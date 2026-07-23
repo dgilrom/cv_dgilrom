@@ -1,6 +1,6 @@
 // Rocket sprites. The rocket is a stack: nose + one stage per job + engine.
 // Stage accent stripes ('#') are tinted per-job with the shared ACCENTS colors.
-import { sprite, makeCanvas } from '../px.js';
+import { sprite, makeRawCanvas } from '../px.js';
 import { ACCENTS } from '../palette.js';
 
 export function nose() {
@@ -50,8 +50,9 @@ export function buildRocket(n) {
   const ns = nose();
   const st = stageSprites(n);
   const en = engine();
+  // parts are already K-scaled: composite them 1:1 on a raw canvas
   const h = ns.height + st.reduce((a, s) => a + s.height, 0) + en.height;
-  const c = makeCanvas(11, h);
+  const c = makeRawCanvas(ns.width, h);
   const ctx = c.getContext('2d');
   let y = 0;
   ctx.drawImage(ns, 0, y);

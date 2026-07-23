@@ -1,7 +1,7 @@
 // ACT 4 — Deep Space (hobbies & contact). The astronaut drifts past planets
 // and asteroids toward the contact space station. Konami UFO lives here.
 import { PAL } from '../sprites/palette.js';
-import { blit, blitC } from '../sprites/px.js';
+import { blit, blitC, K } from '../sprites/px.js';
 import { astronautFloat } from '../sprites/sheets/astronaut.js';
 import { planetRinged, planetSmall, asteroid, ufo } from '../sprites/sheets/celestial.js';
 import { station, STATION_LIGHTS } from '../sprites/sheets/station.js';
@@ -66,10 +66,10 @@ export default {
     ctx.save();
     ctx.translate(Math.round(ax), Math.round(ay));
     ctx.rotate(Math.sin(t * 0.35) * 0.22);
-    ctx.drawImage(this.astro, -5, -7);
+    ctx.drawImage(this.astro, -Math.floor(this.astro.width / 2), -Math.floor(this.astro.height / 2));
     ctx.restore();
     if (Math.random() < 0.1) {
-      parts.spawn(ax - 6, ay + 4, -8 - Math.random() * 6, (Math.random() - 0.5) * 4, 0.9, PAL.cyan, 1);
+      parts.spawn(ax - 12, ay + 8, -8 - Math.random() * 6, (Math.random() - 0.5) * 4, 0.9, PAL.cyan, 2);
     }
 
     // contact station approaching from the right
@@ -84,7 +84,8 @@ export default {
       STATION_LIGHTS.forEach(([lx, ly, color], i) => {
         if (Math.sin(t * 4 + i * 1.3) > 0) {
           ctx.fillStyle = color;
-          ctx.fillRect(Math.round(ox + lx), Math.round(oy + ly), 2, 1);
+          // light offsets are in logical sprite units -> scale by K
+          ctx.fillRect(Math.round(ox + lx * K), Math.round(oy + ly * K), 2, 2);
         }
       });
       // docking tractor beam

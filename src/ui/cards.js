@@ -117,7 +117,7 @@ const builders = {
     hobbies.forEach((hb, i) => {
       const left = i % 2 ? 56 + (i * 7) % 14 : 10 + (i * 9) % 16;
       html += `<div class="hobby-chip" style="top:${(lay.hobbies[i] * 100).toFixed(1)}%;left:${left}%;--delay:${(i * 0.7).toFixed(1)}s">
-        <img src="${iconUrl(hb.icon)}" alt="" width="42" height="42" />
+        <img src="${iconUrl(hb.icon)}" alt="" width="56" height="56" />
         <span>${esc(L(hb.name))}</span>
       </div>`;
     });

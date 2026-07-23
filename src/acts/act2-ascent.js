@@ -55,7 +55,7 @@ export default {
     if (gy < h + 10) {
       ctx.fillStyle = '#233620';
       ctx.fillRect(0, Math.round(gy), w, h);
-      blit(ctx, this.gantry, rx - 22, gy - this.gantry.height + 2);
+      blit(ctx, this.gantry, rx - 44, gy - this.gantry.height + 2);
     }
 
     // cloud layers sweeping down at different speeds (parallax)
@@ -86,12 +86,12 @@ export default {
       const ft = p - this.detachThreshold(i);
       const dir = i % 2 === 0 ? -1 : 1;
       const fx = rx + dir * ft * w * 2.2;
-      const fy = ry + 20 + ft * h * 9;
-      if (fy < h + 20) {
+      const fy = ry + 30 + ft * h * 9;
+      if (fy < h + 30) {
         ctx.save();
         ctx.translate(Math.round(fx), Math.round(fy));
         ctx.rotate(dir * ft * 14);
-        ctx.drawImage(this.stages[i], -6, -4);
+        ctx.drawImage(this.stages[i], -Math.floor(this.stages[i].width / 2), -Math.floor(this.stages[i].height / 2));
         ctx.restore();
       }
     }
@@ -108,7 +108,7 @@ export default {
 
     if (a < 0.1) {
       ctx.globalAlpha = 1 - a / 0.1;
-      drawText(ctx, T('countdown.liftoff'), w / 2, h * 0.16, { scale: 2, color: PAL.yellow, align: 'center' });
+      drawText(ctx, T('countdown.liftoff'), w / 2, h * 0.05, { scale: 2, color: PAL.yellow, align: 'center' });
       ctx.globalAlpha = 1;
     }
   },
@@ -124,14 +124,14 @@ export default {
     ctx.fillStyle = '#1a2818';
     ctx.fillRect(0, gy + 6, w, h - gy - 6);
     ctx.fillStyle = PAL.grey3;
-    ctx.fillRect(rx - 16, gy - 2, 36, 4);
+    ctx.fillRect(rx - 32, gy - 2, 72, 4);
 
     const shake = p > CE ? Math.sin(t * 70) * 1.5 : 0;
     ctx.save();
     ctx.translate(Math.round(shake), Math.round(shake * 0.6));
 
     // gantry retracts as the count progresses
-    blit(ctx, this.gantry, rx - 22 - (p / CE) * 6, gy - this.gantry.height + 2);
+    blit(ctx, this.gantry, rx - 44 - (p / CE) * 12, gy - this.gantry.height + 2);
     this.drawStack(ctx, rx, 0, 0, t, parts, w, h, false, gy);
 
     // ignition flame + smoke
@@ -139,15 +139,15 @@ export default {
       const f = (p - CE) / (IG - CE);
       for (let i = 0; i < 5; i++) {
         parts.spawn(
-          rx - 4 + Math.random() * 8,
+          rx - 8 + Math.random() * 16,
           gy,
           (Math.random() - 0.5) * 30 * f,
           -Math.random() * 8 * f,
           0.5,
           [PAL.yellow, PAL.flame, PAL.orange][i % 3],
-          2
+          3
         );
-        parts.spawn(rx - 10 + Math.random() * 20, gy, (Math.random() - 0.5) * 40, -Math.random() * 4, 1.2, PAL.grey2, 2);
+        parts.spawn(rx - 20 + Math.random() * 40, gy, (Math.random() - 0.5) * 40, -Math.random() * 4, 1.2, PAL.grey2, 3);
       }
       ctx.globalAlpha = f * 0.5;
       ctx.fillStyle = '#fff';
@@ -163,14 +163,14 @@ export default {
         audio.tick();
         this.lastCount = n;
       }
-      drawText(ctx, String(n), w / 2, h * 0.22, { scale: 6, color: PAL.yellow, align: 'center' });
-      drawText(ctx, 'T-', w / 2 - 24 * 2, h * 0.22 + 6, { scale: 2, color: PAL.grey1, align: 'right' });
+      drawText(ctx, String(n), w / 2, h * 0.12, { scale: 6, color: PAL.yellow, align: 'center' });
+      drawText(ctx, 'T-', w / 2 - 24 * 2, h * 0.12 + 6, { scale: 2, color: PAL.grey1, align: 'right' });
     } else {
       if (!this.ignited) {
         audio.ignition();
         this.ignited = true;
       }
-      drawText(ctx, T('countdown.ignition'), w / 2, h * 0.24, { scale: 3, color: PAL.flame, align: 'center' });
+      drawText(ctx, T('countdown.ignition'), w / 2, h * 0.12, { scale: 3, color: PAL.flame, align: 'center' });
     }
     if (p < 0.02) this.ignited = false;
   },
@@ -183,29 +183,30 @@ export default {
 
   /** Draw the remaining stack. In flight, centered on ry; on pad, resting on gy. */
   drawStack(ctx, rx, ry, detached, t, parts, w, h, flying, gy = 0) {
+    const stageH = this.stages[0] ? this.stages[0].height : 0;
     const remaining = this.stages.length - detached;
-    const totalH = this.nose.height + remaining * 8 + this.engine.height;
+    const totalH = this.nose.height + remaining * stageH + this.engine.height;
     let y = flying ? Math.round(ry - totalH / 2) : gy - totalH + 2;
-    const x = rx - 5;
+    const x = rx - Math.floor(this.nose.width / 2);
 
     blit(ctx, this.nose, x, y);
     y += this.nose.height;
     for (let i = this.stages.length - 1; i >= detached; i--) {
       blit(ctx, this.stages[i], x, y);
-      y += 8;
+      y += stageH;
     }
     blit(ctx, this.engine, x, y);
     y += this.engine.height;
 
     if (flying) {
       // exhaust flame + trail
-      const len = 6 + Math.floor(Math.sin(t * 30) * 2 + 2);
+      const len = 12 + Math.floor(Math.sin(t * 30) * 4 + 4);
       ctx.fillStyle = PAL.yellow;
-      ctx.fillRect(rx - 2, y, 4, Math.floor(len / 2));
+      ctx.fillRect(rx - 4, y, 8, Math.floor(len / 2));
       ctx.fillStyle = PAL.flame;
-      ctx.fillRect(rx - 1, y + Math.floor(len / 2), 2, len);
+      ctx.fillRect(rx - 2, y + Math.floor(len / 2), 4, len);
       for (let i = 0; i < 3; i++) {
-        parts.spawn(rx - 2 + Math.random() * 4, y + len, (Math.random() - 0.5) * 6, 30 + Math.random() * 30, 0.6, [PAL.orange, PAL.grey2, PAL.yellow][i % 3], 1);
+        parts.spawn(rx - 4 + Math.random() * 8, y + len, (Math.random() - 0.5) * 6, 30 + Math.random() * 30, 0.6, [PAL.orange, PAL.grey2, PAL.yellow][i % 3], 2);
       }
     }
     return y;

@@ -81,22 +81,22 @@ export default {
       // blinking rooftop beacon
       if (Math.sin(t * 3 + i * 2) > 0) {
         ctx.fillStyle = near ? PAL.amber : PAL.red;
-        ctx.fillRect(Math.round(bx + b.spr.width / 2), by - 2, 1, 1);
+        ctx.fillRect(Math.round(bx + b.spr.width / 2), by - 3, 2, 2);
       }
     });
 
     // launch pad: gantry + rocket (world x chosen so it ends up screen-center)
     const padWX = 0.79 * worldW;
     const rx = padWX - camX;
-    if (rx > -40 && rx < w + 40) {
+    if (rx > -80 && rx < w + 80) {
       ctx.fillStyle = PAL.grey3;
-      ctx.fillRect(Math.round(rx - 14), gy - 2, 34, 4); // pad slab
-      blit(ctx, this.gantry, rx - 22, gy - this.gantry.height + 2);
+      ctx.fillRect(Math.round(rx - 28), gy - 2, 68, 4); // pad slab
+      blit(ctx, this.gantry, rx - 44, gy - this.gantry.height + 2);
       blit(ctx, this.rocket, rx - this.rocket.width / 2, gy - this.rocket.height + 2);
       // floodlight glow
       ctx.globalAlpha = 0.1 + 0.04 * Math.sin(t * 2);
       ctx.fillStyle = PAL.amber;
-      ctx.fillRect(Math.round(rx - 20), gy - this.rocket.height, 44, this.rocket.height);
+      ctx.fillRect(Math.round(rx - 40), gy - this.rocket.height, 88, this.rocket.height);
       ctx.globalAlpha = 1;
     }
 

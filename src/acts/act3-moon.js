@@ -77,16 +77,17 @@ export default {
     const landerWX = 0.28 * worldW;
     const lx = landerWX - camX;
     const stackH = this.nose.height + this.engine.height;
+    const nx = Math.floor(this.nose.width / 2);
     if (p < L) {
-      const ly = lerp(-20, gy - stackH + 1, ease(p / L));
-      blit(ctx, this.nose, lx - 5, ly);
-      blit(ctx, this.engine, lx - 5, ly + this.nose.height);
+      const ly = lerp(-stackH - 10, gy - stackH + 1, ease(p / L));
+      blit(ctx, this.nose, lx - nx, ly);
+      blit(ctx, this.engine, lx - nx, ly + this.nose.height);
       // retro thruster
       ctx.fillStyle = PAL.flame;
-      ctx.fillRect(Math.round(lx) - 1, Math.round(ly + stackH), 2, 3);
+      ctx.fillRect(Math.round(lx) - 2, Math.round(ly + stackH), 4, 6);
       if (p > L * 0.8) {
         for (let i = 0; i < 4; i++) {
-          parts.spawn(lx - 6 + Math.random() * 12, gy + 1, (Math.random() - 0.5) * 40, -Math.random() * 12, 0.8, PAL.moon1, 1, 30);
+          parts.spawn(lx - 12 + Math.random() * 24, gy + 1, (Math.random() - 0.5) * 40, -Math.random() * 12, 0.8, PAL.moon1, 2, 30);
         }
       }
       this.landed = false;
@@ -95,9 +96,9 @@ export default {
         audio.bleep();
         this.landed = true;
       }
-      if (lx > -20 && lx < w + 20) {
-        blit(ctx, this.nose, lx - 5, gy - stackH + 1);
-        blit(ctx, this.engine, lx - 5, gy - this.engine.height + 1);
+      if (lx > -40 && lx < w + 40) {
+        blit(ctx, this.nose, lx - nx, gy - stackH + 1);
+        blit(ctx, this.engine, lx - nx, gy - this.engine.height + 1);
       }
     }
 
@@ -116,7 +117,7 @@ export default {
       blit(ctx, frame, w * 0.34, gy - frame.height + 1 - hop);
       // kicked-up dust
       if (Math.random() < 0.15) {
-        parts.spawn(w * 0.34 + 5, gy, (Math.random() - 0.5) * 8, -Math.random() * 6, 0.7, PAL.moon1, 1, 12);
+        parts.spawn(w * 0.34 + 10, gy, (Math.random() - 0.5) * 8, -Math.random() * 6, 0.7, PAL.moon1, 2, 12);
       }
     }
 

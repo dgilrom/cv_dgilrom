@@ -2,7 +2,24 @@
 // canvases that get blitted (and upscaled with crisp pixels) by the engine.
 import { CHARS } from './palette.js';
 
+/**
+ * Global sprite scale: every sprite pixel renders as K x K canvas pixels.
+ * Sprites (astronaut, buildings, rocket...) get bigger relative to the
+ * scene backgrounds (sky, terrain, stars), which stay at 1x.
+ */
+export const K = 2;
+
 export function makeCanvas(w, h) {
+  const c = document.createElement('canvas');
+  c.width = w * K;
+  c.height = h * K;
+  // pre-scale the context so all drawing code keeps using logical coords
+  c.getContext('2d').scale(K, K);
+  return c;
+}
+
+/** Unscaled canvas for compositing already-scaled sprites (e.g. buildRocket). */
+export function makeRawCanvas(w, h) {
   const c = document.createElement('canvas');
   c.width = w;
   c.height = h;
