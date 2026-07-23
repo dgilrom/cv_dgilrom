@@ -1,5 +1,9 @@
 # CV Interactivo · Misión Espacial 🚀
 
+[![Deploy to GitHub Pages](https://github.com/dgilrom/cv_dgilrom/actions/workflows/deploy.yml/badge.svg)](https://github.com/dgilrom/cv_dgilrom/actions/workflows/deploy.yml)
+
+**🌐 En vivo: https://dgilrom.github.io/cv_dgilrom/**
+
 CV interactivo de scroll narrativo con estética pixel art: un viaje en 4 actos
 (base terrestre → lanzamiento → luna → espacio profundo). Todo el contenido
 vive en `public/cv-data.json`; el motor renderiza lo que haya ahí.
