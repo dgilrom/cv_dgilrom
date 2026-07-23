@@ -1,0 +1,165 @@
+#hud {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+}
+
+#hud button,
+#hud a {
+  pointer-events: auto;
+}
+
+/* top-right controls */
+.hud-top {
+  position: fixed;
+  top: 12px;
+  right: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.lang-switch {
+  display: flex;
+  border: 2px solid var(--cyan);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.6);
+}
+
+.lang-switch button {
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 6px 10px;
+  border: none;
+  background: var(--space1);
+  color: var(--grey);
+  cursor: pointer;
+}
+
+.lang-switch button.on {
+  background: var(--cyan);
+  color: #05202a;
+}
+
+.sound-btn {
+  font-family: var(--font);
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 7px 10px;
+  border: 2px solid var(--amber);
+  background: var(--space1);
+  color: var(--amber);
+  cursor: pointer;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.6);
+}
+
+.sound-btn[aria-pressed='true'] {
+  background: var(--amber);
+  color: #2a1500;
+}
+
+/* altimeter */
+.altimeter {
+  position: fixed;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 58vh;
+  width: 30px;
+}
+
+.alt-track {
+  position: relative;
+  height: 100%;
+  width: 6px;
+  margin: 0 auto;
+  background: var(--space1);
+  border: 2px solid var(--grey);
+}
+
+.alt-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(to top, var(--amber), var(--cyan));
+}
+
+.alt-ship {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  color: var(--white);
+  font-size: 11px;
+  line-height: 1;
+  text-shadow: 0 0 4px var(--cyan);
+}
+
+.alt-marker {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.alt-marker i {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 6px auto;
+  background: var(--space1);
+  border: 2px solid var(--cyan);
+}
+
+.alt-marker:hover i,
+.alt-marker:focus-visible i {
+  background: var(--cyan);
+}
+
+.alt-marker span {
+  position: absolute;
+  right: 26px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font);
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--cyan);
+  background: var(--space1);
+  border: 1px solid var(--cyan);
+  padding: 2px 5px;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+
+.alt-marker:hover span,
+.alt-marker:focus-visible span {
+  opacity: 1;
+}
+
+@media (max-width: 700px) {
+  .altimeter {
+    right: 6px;
+    height: 46vh;
+  }
+
+  .hud-top {
+    top: 8px;
+    right: 8px;
+  }
+
+  .sound-btn {
+    font-size: 9px;
+    padding: 6px 6px;
+  }
+}

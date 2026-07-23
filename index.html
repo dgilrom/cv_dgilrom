@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CV interactivo de Daniel Gil Romero — un viaje espacial en pixel art." />
+  <title>Daniel Gil Romero — CV Interactivo · Misión Espacial</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
+  <style>
+    /* Critical inline CSS: avoid flash before the bundle loads */
+    html { background: #05050f; }
+    body { margin: 0; background: #05050f; color: #e8e8ff; }
+    #boot {
+      position: fixed; inset: 0; z-index: 100; background: #05050f;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      font-family: 'Courier New', Courier, monospace;
+    }
+  </style>
+</head>
+<body>
+  <div id="boot" role="status">
+    <pre id="boot-log"></pre>
+    <div class="boot-bar"><i></i></div>
+  </div>
+
+  <canvas id="world" aria-hidden="true"></canvas>
+
+  <main id="journey"></main>
+
+  <aside id="hud"></aside>
+
+  <noscript>
+    <p style="padding:2rem;font-family:monospace;">
+      Este CV interactivo necesita JavaScript. / This interactive CV requires JavaScript.<br>
+      LinkedIn: https://www.linkedin.com/in/daniel-gil-romero/
+    </p>
+  </noscript>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

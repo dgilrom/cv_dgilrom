@@ -1,0 +1,75 @@
+{
+  "boot": {
+    "lines": {
+      "es": [
+        "> INICIANDO SECUENCIA DE ARRANQUE DE MISION...",
+        "> SISTEMAS DE VUELO............ OK",
+        "> SOPORTE VITAL................ OK",
+        "> ENLACE DE TELEMETRIA......... OK",
+        "> TRIPULANTE: DANIEL GIL ROMERO",
+        "> CLIC PARA SALTAR"
+      ],
+      "en": [
+        "> MISSION BOOT SEQUENCE INITIATED...",
+        "> FLIGHT SYSTEMS............... OK",
+        "> LIFE SUPPORT................. OK",
+        "> TELEMETRY LINK............... OK",
+        "> CREW: DANIEL GIL ROMERO",
+        "> CLICK TO SKIP"
+      ]
+    }
+  },
+  "hud": {
+    "progressLabel": { "es": "Progreso de la misión", "en": "Mission progress" },
+    "acts": {
+      "base": { "es": "BASE", "en": "BASE" },
+      "launch": { "es": "ASCENSO", "en": "ASCENT" },
+      "moon": { "es": "LUNA", "en": "MOON" },
+      "space": { "es": "ESPACIO", "en": "SPACE" }
+    },
+    "soundOn": { "es": "SONIDO SI", "en": "SOUND ON" },
+    "soundOff": { "es": "SONIDO NO", "en": "SOUND OFF" },
+    "langLabel": { "es": "Idioma", "en": "Language" }
+  },
+  "acts": {
+    "base": {
+      "title": { "es": "ACTO 1 · BASE TERRESTRE", "en": "ACT 1 · EARTH BASE" },
+      "subtitle": { "es": "REGISTROS DE ENTRENAMIENTO · FORMACIÓN", "en": "TRAINING RECORDS · EDUCATION" }
+    },
+    "launch": {
+      "title": { "es": "ACTO 2 · LANZAMIENTO Y ASCENSO", "en": "ACT 2 · LAUNCH & ASCENT" },
+      "subtitle": { "es": "DIARIO DE MISIÓN · EXPERIENCIA PROFESIONAL", "en": "MISSION LOG · PROFESSIONAL EXPERIENCE" }
+    },
+    "moon": {
+      "title": { "es": "ACTO 3 · LA LUNA", "en": "ACT 3 · THE MOON" },
+      "subtitle": { "es": "SISTEMAS EVA · HABILIDADES Y CERTIFICACIONES", "en": "EVA SYSTEMS · SKILLS & CERTIFICATIONS" }
+    },
+    "space": {
+      "title": { "es": "ACTO 4 · ESPACIO PROFUNDO", "en": "ACT 4 · DEEP SPACE" },
+      "subtitle": { "es": "CARGA PERSONAL · AFICIONES Y CONTACTO", "en": "PERSONAL PAYLOAD · HOBBIES & CONTACT" }
+    }
+  },
+  "countdown": {
+    "ignition": { "es": "IGNICION", "en": "IGNITION" },
+    "liftoff": { "es": "DESPEGUE", "en": "LIFTOFF" }
+  },
+  "labels": {
+    "present": { "es": "Actualidad", "en": "Present" },
+    "record": { "es": "REGISTRO", "en": "RECORD" },
+    "stage": { "es": "ETAPA", "en": "STAGE" },
+    "scrollHint": { "es": "DESLIZA PARA INICIAR LA MISIÓN", "en": "SCROLL TO START THE MISSION" },
+    "certifications": { "es": "BANDERAS PLANTADAS · CERTIFICACIONES", "en": "FLAGS PLANTED · CERTIFICATIONS" },
+    "transmission": { "es": "PANEL DE TRANSMISIÓN", "en": "TRANSMISSION PANEL" },
+    "transmissionSub": { "es": "CANAL ABIERTO · CONTACTA CON EL ASTRONAUTA", "en": "CHANNEL OPEN · CONTACT THE ASTRONAUT" },
+    "email": { "es": "EMAIL", "en": "EMAIL" },
+    "linkedin": "LINKEDIN",
+    "github": "GITHUB",
+    "location": { "es": "UBICACIÓN", "en": "LOCATION" },
+    "konami": { "es": "¡CÓDIGO SECRETO ACTIVADO! OVNI AVISTADO", "en": "CHEAT CODE ACTIVATED! UFO SIGHTED" },
+    "months": {
+      "es": ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"],
+      "en": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    },
+    "altUnit": "KM"
+  }
+}

@@ -1,0 +1,68 @@
+/* Reduced-motion fallback: a static but styled, fully readable document.
+   Activated via body.reduced (JS mirrors prefers-reduced-motion). */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+body.reduced #world {
+  display: none;
+}
+
+body.reduced .act {
+  height: auto !important;
+  min-height: 0;
+  padding: 6vh 0 4vh;
+}
+
+body.reduced .hero {
+  position: static;
+  height: auto;
+  padding: 10vh 8vw 4vh;
+}
+
+body.reduced .act-title,
+body.reduced .card,
+body.reduced .contact-panel {
+  position: static !important;
+  transform: none !important;
+  opacity: 1 !important;
+  margin: 26px auto;
+}
+
+body.reduced .hobby-chip {
+  position: static !important;
+  display: inline-flex;
+  opacity: 1 !important;
+  margin: 8px;
+}
+
+body.reduced .act-space {
+  text-align: center;
+}
+
+/* styled static backdrops per act */
+body.reduced .act-base {
+  background: linear-gradient(#0b0b24, #4a2c5e 70%, #b0552a);
+}
+
+body.reduced .act-launch {
+  background: linear-gradient(#b0552a -10%, #22224e 40%, #05050f);
+}
+
+body.reduced .act-moon {
+  background: linear-gradient(#05050f 60%, #2e2e40);
+}
+
+body.reduced .act-space {
+  background: linear-gradient(#05050f, #10102e);
+}

@@ -1,0 +1,316 @@
+{
+  "meta": {
+    "title": {
+      "es": "Daniel Gil Romero — CV Interactivo · Misión Espacial",
+      "en": "Daniel Gil Romero — Interactive CV · Space Mission"
+    },
+    "description": {
+      "es": "CV interactivo de Daniel Gil Romero: un viaje espacial en pixel art por su formación, experiencia, habilidades y aficiones.",
+      "en": "Daniel Gil Romero's interactive CV: a pixel-art space journey through his education, experience, skills and hobbies."
+    },
+    "defaultLang": "es"
+  },
+  "profile": {
+    "name": "Daniel Gil Romero",
+    "tagline": {
+      "es": "MS Office | Gestión de Proyectos y Servicios | Consultoría IT",
+      "en": "MS Office | Project/Service Management | IT Consulting"
+    },
+    "summary": {
+      "es": "Enamorado de la tecnología: me encanta probar cada novedad que sale. Dinámico, creativo y con gran capacidad de adaptación, cómodo trabajando en equipo y bajo presión, tomando la iniciativa para resolver problemas y conseguir objetivos. Con olfato para detectar necesidades en los clientes y generar ventas cruzadas, y mentalidad hunter para abrir nuevas cuentas.",
+      "en": "A technology lover at heart — I can't resist trying every new tool that comes out. Dynamic, creative and highly adaptable, comfortable working in teams and under pressure, taking the initiative to solve problems and deliver results. A good eye for spotting client needs and turning them into cross-selling opportunities, with a hunter mindset for opening new accounts."
+    }
+  },
+  "education": [
+    {
+      "id": "edu-1",
+      "type": "degree",
+      "degree": {
+        "es": "Ingeniería de Telecomunicaciones",
+        "en": "Telecommunications Engineering"
+      },
+      "institution": { "es": "UCAM", "en": "UCAM" },
+      "specialization": {
+        "es": "Sistemas de Telecomunicación",
+        "en": "Telecommunication Systems"
+      },
+      "location": { "es": "Murcia, España", "en": "Murcia, Spain" },
+      "startYear": 2010,
+      "endYear": 2015,
+      "description": { "es": "", "en": "" }
+    },
+    {
+      "id": "edu-2",
+      "type": "exchange",
+      "degree": {
+        "es": "Semestre internacional — Programa Overseas",
+        "en": "International semester — Overseas Programme"
+      },
+      "institution": {
+        "es": "Nanyang Technological University (NTU)",
+        "en": "Nanyang Technological University (NTU)"
+      },
+      "location": { "es": "Singapur", "en": "Singapore" },
+      "startYear": 2013,
+      "endYear": 2013,
+      "description": {
+        "es": "Primer semestre de 2013 cursado en la NTU dentro del programa Overseas.",
+        "en": "First semester of 2013 completed at NTU as part of the Overseas programme."
+      }
+    },
+    {
+      "id": "edu-3",
+      "type": "degree",
+      "degree": {
+        "es": "Executive MBA",
+        "en": "Executive MBA"
+      },
+      "institution": { "es": "ENAE Business School", "en": "ENAE Business School" },
+      "location": { "es": "Murcia, España", "en": "Murcia, Spain" },
+      "startYear": 2024,
+      "endYear": 2025,
+      "description": { "es": "", "en": "" }
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-1",
+      "company": "EY",
+      "role": { "es": "Consultor IT", "en": "IT Consultant" },
+      "location": { "es": "Madrid, España", "en": "Madrid, Spain" },
+      "startDate": "2016-01",
+      "endDate": "2017-02",
+      "highlights": [
+        { "es": "SAP FI, MM, CO.", "en": "SAP FI, MM, CO." },
+        { "es": "Programación ABAP.", "en": "ABAP programming." },
+        { "es": "Gestión de accesos.", "en": "Access management." }
+      ]
+    },
+    {
+      "id": "exp-2",
+      "company": "Indra",
+      "role": { "es": "Consultor IT", "en": "IT Consultant" },
+      "location": { "es": "Madrid, España", "en": "Madrid, Spain" },
+      "startDate": "2017-02",
+      "endDate": "2017-11",
+      "highlights": [
+        { "es": "Consultor IT de SAP GRC.", "en": "SAP GRC IT Consultant." },
+        { "es": "Proyectos de implantación y soporte.", "en": "Implementation and support projects." }
+      ]
+    },
+    {
+      "id": "exp-3",
+      "company": "Management Solutions",
+      "role": { "es": "Consultor Senior de Negocio", "en": "Senior Business Consultant" },
+      "location": { "es": "Madrid, España", "en": "Madrid, Spain" },
+      "startDate": "2017-11",
+      "endDate": "2020-09",
+      "highlights": [
+        {
+          "es": "Proyectos de migración de sistemas IT para el área de tesorería en entidades financieras.",
+          "en": "IT systems migration projects for the treasury area in financial entities."
+        },
+        {
+          "es": "Soporte a PMO, configuración de sistemas y tareas ETL.",
+          "en": "PMO support, system configurations, ETL tasks."
+        },
+        {
+          "es": "Responsable de un equipo de 3 personas.",
+          "en": "Head of a 3-people team."
+        }
+      ]
+    },
+    {
+      "id": "exp-4",
+      "company": "Odilo",
+      "role": { "es": "Project Manager", "en": "Project Manager" },
+      "location": { "es": "Cartagena, España", "en": "Cartagena, Spain" },
+      "startDate": "2020-10",
+      "endDate": "2022-02",
+      "highlights": [
+        {
+          "es": "Coordinación de proyectos internacionales de implantación de ecosistemas de aprendizaje digital.",
+          "en": "Coordination of international projects for the implementation of digital learning ecosystems."
+        },
+        {
+          "es": "Cálculo de KPIs y elaboración de informes estadísticos.",
+          "en": "KPIs calculation and creation of statistical reports."
+        },
+        {
+          "es": "Gestión de la asignación de tiempos de los empleados de la compañía.",
+          "en": "Company employees' time allocation."
+        },
+        {
+          "es": "Gestión y administración de productos Atlassian.",
+          "en": "Atlassian products management and administration."
+        }
+      ]
+    },
+    {
+      "id": "exp-5",
+      "company": "Vanadys",
+      "role": { "es": "Project Manager – Service Manager", "en": "Project Manager – Service Manager" },
+      "location": { "es": "Cartagena, España", "en": "Cartagena, Spain" },
+      "startDate": "2022-02",
+      "endDate": "2023-10",
+      "highlights": [
+        {
+          "es": "Coordinación de todas las fases de proyectos de desarrollo web.",
+          "en": "Coordination of all phases of web development projects."
+        },
+        {
+          "es": "Cálculo de KPIs y elaboración de informes estadísticos.",
+          "en": "KPIs calculation and creation of statistical reports."
+        },
+        {
+          "es": "Asignación de tiempos del personal del departamento.",
+          "en": "Department staff time allocation."
+        },
+        {
+          "es": "Gestión y administración de productos Atlassian.",
+          "en": "Atlassian products management and administration."
+        },
+        {
+          "es": "Gestión de proveedores (Google, GitLab, etc.).",
+          "en": "Vendor management (Google, GitLab, etc.)."
+        },
+        {
+          "es": "Implantación y migración a Google Analytics 4.",
+          "en": "Google Analytics 4 implementation and migration."
+        },
+        {
+          "es": "Análisis y propuesta de nuevas funcionalidades a clientes.",
+          "en": "Analysis and proposals of new features to clients."
+        },
+        {
+          "es": "Responsable del departamento de transformación digital (7 personas).",
+          "en": "Head of the digital transformation department (7 people)."
+        }
+      ]
+    },
+    {
+      "id": "exp-6",
+      "company": "KUMO Networks",
+      "role": { "es": "Cloud Consultant", "en": "Cloud Consultant" },
+      "location": { "es": "Murcia, España", "en": "Murcia, Spain" },
+      "startDate": "2023-11",
+      "endDate": "present",
+      "highlights": [
+        {
+          "es": "Consultoría y diseño de soluciones cloud (IaaS) sobre infraestructura de centro de datos Tier IV.",
+          "en": "Consulting and design of cloud (IaaS) solutions on Tier IV data center infrastructure."
+        },
+        {
+          "es": "Preventa técnica y acompañamiento a clientes y partners del canal.",
+          "en": "Technical presales and support for clients and channel partners."
+        },
+        {
+          "es": "Desarrollo del programa de partners y de la estrategia de canal.",
+          "en": "Development of the partner program and channel strategy."
+        },
+        { "es": "Gestión de proyectos.", "en": "Project management." },
+        { "es": "Desarrollo de negocio.", "en": "Business development." }
+      ]
+    }
+  ],
+  "skills": {
+    "categories": [
+      {
+        "id": "skill-cat-1",
+        "name": { "es": "Gestión y comercial", "en": "Management & Business" },
+        "items": [
+          { "es": "Gestión de Proyectos y Servicios", "en": "Project/Service Management" },
+          { "es": "Consultoría IT", "en": "IT Consulting" },
+          { "es": "Gestión de cuentas comerciales", "en": "Commercial account management" },
+          { "es": "Negociación de presupuestos", "en": "Budget negotiation" }
+        ]
+      },
+      {
+        "id": "skill-cat-2",
+        "name": { "es": "Herramientas y técnicas", "en": "Tools & Technical" },
+        "items": [
+          { "es": "MS Office", "en": "MS Office" },
+          { "es": "Programación (nivel básico)", "en": "Programming (basic level)" }
+        ]
+      },
+      {
+        "id": "skill-cat-3",
+        "name": { "es": "Idiomas", "en": "Languages" },
+        "items": [
+          { "es": "Español (nativo)", "en": "Spanish (native)" },
+          { "es": "Inglés (nivel profesional)", "en": "English (professional level)" }
+        ]
+      }
+    ]
+  },
+  "certifications": [
+    {
+      "id": "cert-1",
+      "name": {
+        "es": "Software Projects with SCRUM",
+        "en": "Software Projects with SCRUM"
+      },
+      "issuer": "Udemy",
+      "year": 2022
+    },
+    {
+      "id": "cert-2",
+      "name": {
+        "es": "Bootcamp de Desarrollo Web Full Stack",
+        "en": "Full Stack Web Development Bootcamp"
+      },
+      "issuer": "MasterD",
+      "year": 2023
+    }
+  ],
+  "hobbies": [
+    {
+      "id": "hobby-1",
+      "name": { "es": "Running", "en": "Running" },
+      "icon": "running",
+      "iconHint": "running shoe / astronaut jogging on asteroid"
+    },
+    {
+      "id": "hobby-2",
+      "name": { "es": "Ciclismo", "en": "Cycling" },
+      "icon": "bike",
+      "iconHint": "pixel bicycle / space rover bike"
+    },
+    {
+      "id": "hobby-3",
+      "name": { "es": "Domótica con Home Assistant", "en": "Home automation with Home Assistant" },
+      "icon": "smarthome",
+      "iconHint": "smart home / satellite-connected house"
+    },
+    {
+      "id": "hobby-4",
+      "name": { "es": "Raspberry Pi", "en": "Raspberry Pi" },
+      "icon": "raspberry",
+      "iconHint": "raspberry-shaped mini planet with circuit texture"
+    },
+    {
+      "id": "hobby-5",
+      "name": { "es": "Vibe Coding", "en": "Vibe Coding" },
+      "icon": "vibecoding",
+      "iconHint": "laptop with sparkles / code floating in space"
+    },
+    {
+      "id": "hobby-6",
+      "name": { "es": "LLMs de IA en local", "en": "Local AI LLMs" },
+      "icon": "llm",
+      "iconHint": "pixel brain / GPU chip asteroid"
+    },
+    {
+      "id": "hobby-7",
+      "name": { "es": "Home lab con Proxmox + NAS", "en": "Home lab with Proxmox + NAS" },
+      "icon": "homelab",
+      "iconHint": "mini space station with server racks / orbiting server tower with blinking LEDs"
+    }
+  ],
+  "contact": {
+    "email": "dgilrom@gmail.com",
+    "location": { "es": "Murcia, España", "en": "Murcia, Spain" },
+    "linkedin": "https://www.linkedin.com/in/daniel-gil-romero/",
+    "github": "https://github.com/dgilrom"
+  }
+}
