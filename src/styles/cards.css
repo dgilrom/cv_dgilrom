@@ -88,14 +88,14 @@
 
 .act-title h2 {
   margin: 0;
-  font-size: clamp(14px, 3vw, 22px);
+  font-size: clamp(16px, 2.6vw, 30px);
   letter-spacing: 2px;
   color: var(--white);
 }
 
 .act-title p {
-  margin: 6px 0 0;
-  font-size: clamp(9px, 1.8vw, 12px);
+  margin: 7px 0 0;
+  font-size: clamp(10px, 1.5vw, 15px);
   letter-spacing: 1px;
   color: var(--amber);
 }
@@ -108,11 +108,15 @@
 .card {
   position: absolute;
   z-index: 2;
-  width: min(430px, 86vw);
-  background: rgba(10, 10, 30, 0.88);
+  /* ancho relativo al viewport: escala con el monitor (antes fijo 430px,
+     que en pantallas grandes quedaba diminuto frente a la escena).
+     El tope de 42vw garantiza que un par izquierda/derecha nunca invada
+     el pasillo central donde asciende el cohete (acto 2). */
+  width: min(42vw, clamp(300px, 35vw, 620px));
+  background: rgba(10, 10, 30, 0.9);
   border: 2px solid var(--accent, var(--cyan));
   box-shadow: 0 0 0 1px #05050f, 6px 6px 0 rgba(0, 0, 0, 0.55);
-  padding: 14px 18px;
+  padding: clamp(16px, 1.6vw, 26px) clamp(20px, 1.9vw, 30px);
   opacity: 0;
   transform: translateY(26px);
   transition: opacity 0.5s, transform 0.5s;
@@ -123,51 +127,54 @@
   transform: translateY(0);
 }
 
+/* left/right dejan libre una banda central (~38%–59%) donde viven los
+   elementos focales de la escena (cohete centrado en el ascenso, etc.) */
 .card.left {
   left: max(4vw, 16px);
 }
 
 .card.right {
-  right: max(4vw, 56px);
+  right: max(4vw, 64px);
 }
 
 .card-tag {
   display: inline-block;
-  font-size: 10px;
+  font-size: clamp(10px, 0.95vw, 13px);
   letter-spacing: 1px;
   color: #05050f;
   background: var(--accent, var(--cyan));
-  padding: 2px 8px;
-  margin-bottom: 8px;
+  padding: 3px 10px;
+  margin-bottom: 10px;
   text-transform: uppercase;
 }
 
 .card h3 {
-  margin: 0 0 4px;
-  font-size: clamp(14px, 2.6vw, 18px);
+  margin: 0 0 5px;
+  font-size: clamp(17px, 2vw, 27px);
+  line-height: 1.2;
   letter-spacing: 1px;
   color: var(--white);
   text-transform: uppercase;
 }
 
 .card-sub {
-  font-size: 11px;
+  font-size: clamp(12px, 1.15vw, 16px);
   color: var(--amber);
   letter-spacing: 1px;
-  margin-bottom: 8px;
+  margin-bottom: 9px;
 }
 
 .card p {
-  margin: 6px 0 0;
-  font-size: 12px;
+  margin: 7px 0 0;
+  font-size: clamp(13px, 1.1vw, 16px);
   line-height: 1.6;
   color: var(--grey);
 }
 
 .card ul {
-  margin: 6px 0 0;
-  padding-left: 18px;
-  font-size: 12px;
+  margin: 7px 0 0;
+  padding-left: 20px;
+  font-size: clamp(13px, 1.1vw, 16px);
   line-height: 1.65;
   color: var(--grey);
 }
@@ -186,12 +193,12 @@
 }
 
 .skill-chip {
-  font-size: 11px;
+  font-size: clamp(12px, 1.05vw, 15px);
   letter-spacing: 0.5px;
   color: var(--cyan);
   border: 1px solid var(--cyan);
   background: rgba(29, 125, 140, 0.15);
-  padding: 4px 8px;
+  padding: 5px 10px;
   animation: floaty 5s ease-in-out infinite alternate;
 }
 
@@ -327,16 +334,24 @@
 }
 
 @media (max-width: 700px) {
+  /* en móvil el ancho impide alternar lados sin taparse: se centran y
+     ocupan casi todo el ancho, con el personaje pequeño detrás */
   .card.left,
   .card.right {
-    left: 4vw;
+    left: 50%;
     right: auto;
-    width: min(430px, 80vw);
+    transform: translateX(-50%) translateY(26px);
+    width: 92vw;
+  }
+
+  .card.left.visible,
+  .card.right.visible {
+    transform: translateX(-50%) translateY(0);
   }
 
   .hobby-chip {
     position: absolute;
     left: 8vw !important;
-    max-width: 70vw;
+    max-width: 84vw;
   }
 }

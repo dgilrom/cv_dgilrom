@@ -51,7 +51,9 @@ const builders = {
       const desc = L(e.description);
       html += card({
         top: lay.cards[i],
-        side: i % 2 ? 'right' : 'left',
+        // acto 1: el astronauta camina por la izquierda -> tarjetas siempre
+        // a la derecha para no taparlo nunca
+        side: 'right',
         accent: ACCENTS[i % ACCENTS.length],
         tag: `${esc(t('labels.record'))} ${String(i + 1).padStart(2, '0')} · ${years}`,
         title: esc(L(e.degree)),
@@ -86,7 +88,8 @@ const builders = {
     (skills?.categories || []).forEach((cat, i) => {
       html += card({
         top: lay.cats[i],
-        side: i % 2 ? 'right' : 'left',
+        // acto 3: el astronauta hace EVA por la izquierda -> tarjetas a la derecha
+        side: 'right',
         accent: ACCENTS[(i + 1) % ACCENTS.length],
         title: esc(L(cat.name)),
         body: `<div class="chips">${cat.items.map((it) => `<span class="skill-chip">${esc(L(it))}</span>`).join('')}</div>`
@@ -97,7 +100,7 @@ const builders = {
     certifications.forEach((c, i) => {
       html += card({
         top: lay.certs[i],
-        side: i % 2 ? 'right' : 'left',
+        side: 'right',
         accent: ACCENTS[(i + 2) % ACCENTS.length],
         tag: `⚑ ${c.year}`,
         title: esc(L(c.name)),
