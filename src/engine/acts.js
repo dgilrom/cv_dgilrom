@@ -31,7 +31,10 @@ export function computeLayout(data) {
     launch: {
       countEnd: 0.12,
       ign: 0.155,
-      cards: spread(data.experience.length, 0.22, 0.88)
+      // los registros empiezan en 0.38: como una tarjeta se hace visible
+      // ~0.18 antes de su posicion, la primera aparece hacia p~0.20, ya
+      // con el cohete ascendiendo y la cuenta atras (fin en 0.155) terminada
+      cards: spread(data.experience.length, 0.38, 0.9)
     },
     moon: {
       landEnd: 0.12,
