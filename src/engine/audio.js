@@ -1,12 +1,41 @@
-// Retro WebAudio bleeps. OFF by default; enabled via the HUD toggle
-// (a user gesture, which also satisfies autoplay policies).
+// Retro WebAudio bleeps. ON by default (can be toggled off in the HUD).
+// The AudioContext can only start after a user gesture (autoplay policy),
+// so it's resumed on the first interaction; the preference persists.
 let ac = null;
-let enabled = false;
+// default ON; a stored '0' means the user turned it off previously
+let enabled = (() => {
+  try {
+    return localStorage.getItem('cv-sound') !== '0';
+  } catch {
+    return true;
+  }
+})();
 
 function ctx() {
   if (!ac) ac = new (window.AudioContext || window.webkitAudioContext)();
   return ac;
 }
+
+// Resume the AudioContext on the first user gesture so default-on sound
+// actually plays once the visitor scrolls/clicks/taps.
+let armed = false;
+function armAutoplay() {
+  if (armed || typeof window === 'undefined') return;
+  armed = true;
+  const events = ['pointerdown', 'keydown', 'wheel', 'touchstart'];
+  const resume = () => {
+    if (enabled) {
+      try {
+        ctx().resume();
+      } catch {
+        /* ignore */
+      }
+    }
+    events.forEach((e) => window.removeEventListener(e, resume));
+  };
+  events.forEach((e) => window.addEventListener(e, resume, { passive: true }));
+}
+armAutoplay();
 
 function env(freq, dur, type = 'square', vol = 0.07, slideTo = 0) {
   if (!enabled) return;
@@ -33,6 +62,11 @@ export const audio = {
   },
   setEnabled(v) {
     enabled = v;
+    try {
+      localStorage.setItem('cv-sound', v ? '1' : '0');
+    } catch {
+      /* ignore */
+    }
     if (v) {
       ctx().resume();
       env(660, 0.08);

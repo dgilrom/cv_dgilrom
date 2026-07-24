@@ -100,6 +100,8 @@ nuevo acto automáticamente.
 
 ## Extras
 
-- **Sonido retro** (bleeps WebAudio): toggle en el HUD, apagado por defecto.
+- **Sonido retro** (bleeps WebAudio): toggle en el HUD, **activado por
+  defecto** (se reanuda en el primer gesto por la política de autoplay; la
+  preferencia se guarda en `localStorage`).
 - **Código Konami** (↑↑↓↓←→←→BA): avistamiento OVNI en el espacio profundo.
 - **Boot screen** "MISSION BOOT SEQUENCE" (clic para saltar).
