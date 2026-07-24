@@ -60,13 +60,14 @@
   color: #2a1500;
 }
 
-/* altimeter */
+/* altimeter — anclado entre los controles superiores y el borde inferior
+   (antes centrado con top:50%, que en pantallas bajas subia hasta tapar
+   el marcador superior con el selector de idioma y el boton de sonido) */
 .altimeter {
   position: fixed;
   right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 58vh;
+  top: 88px;
+  bottom: 44px;
   width: 30px;
 }
 
@@ -150,7 +151,8 @@
 @media (max-width: 700px) {
   .altimeter {
     right: 6px;
-    height: 46vh;
+    top: 70px;
+    bottom: 24px;
   }
 
   .hud-top {
